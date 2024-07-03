@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditionl</title>
+
+
+    <script>
+
+let temperature = 22;
+let rain = true;
+let sunny = false;
+
+// Using logical AND (&) and OR (||) operators
+if (temperature < 20 && rain) {
+    console.log("It's warm but raining.");
+} else if (temperature > 20 || sunny) {
+    console.log("It's warm and sunny or not sunny but warm.");
+} else {
+    console.log("It's neither warm nor sunny.");
+}
+   
+let isRaining = true;
+let isSunny = false;
+
+if (isRaining && !isSunny) {
+    console.log("It's raining.");
+} else if (!isRaining && isSunny) {
+    console.log("It's sunny.");
+} else if (isRaining && isSunny) {
+    console.log("It's both raining and sunny? Unusual weather!");
+} else {
+    console.log("It's neither raining nor sunny.");
+}
+
+let temperature1 = 90;
+
+if (temperature <= 25) {
+    console.log("It's very hot.");
+} else if (temperature >= 20 && temperature >30) {
+    console.log("It's warm.");
+} else if (temperature >= 10 && temperature > 20) {
+    console.log("It's cool.");
+} else {
+    console.log("It's cold.");
+}
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
