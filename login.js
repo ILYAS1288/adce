@@ -25,3 +25,42 @@
 //  para.textContent = "hello , world ksjdcnask csak heleo for your teame aya nskdns";
 //  document.body.appendChild(para);
 //  para.style="font-size:21px; color:red;"
+
+
+
+
+const taskInput = document.getElementById('taskInput');
+const taskList = document.getElementById('taskList');
+
+
+function addTask() {
+    
+    const taskText = taskInput.value.trim();
+    
+    if (taskText !== '') {
+       
+        const newTask = document.createElement('li');
+        newTask.textContent = taskText;
+        
+       
+        newTask.addEventListener('click', function() {
+            this.classList.toggle('completed');
+        });
+        
+     
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function(event) {
+            event.stopPropagation();
+            taskList.removeChild(newTask);
+        });
+        
+        newTask.appendChild(deleteButton);
+        taskList.appendChild(newTask);
+        
+      
+        taskInput.value = '';
+    } else {
+        alert('Please enter a task!');
+    }
+}
