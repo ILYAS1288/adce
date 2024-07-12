@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 class="heading1">heading1</h1>
+<h1 class="heading2">heading1</h1>
+<h1 class="heading3">heading1</h1>
+<h1 class="heading4">heading1</h1>
+<h1 class="heading5">heading1</h1>
+<h1 class="heading6">heading1</h1>
+<h1 class="heading7">heading1</h1>
+<h1 class="heading8">heading1</h1>
+
+    <script>
+
+// //callbacks 
+
+// function hello(profile){
+// //    console.log(Math.floor(age));
+// //    console.log(userinfo.age);
+//  profile()
+
+
+
+// }
+
+// hello(function(){
+//     console.log("Hello i cb functin");
+// })
+
+
+
+// setTimeout(function(){
+//     console.log("i am cb fuynction");
+// } , 3000)
+
+
+
+// btn.addEventListener("click" ,function(){
+
+// })
+
+
+// // callback hell
+// // paramid of doom
+
+
+
+
+// var heading1 =document.querySelector(".heading1");
+// var heading2 =document.querySelector(".heading2");
+// var heading3 =document.querySelector(".heading3");
+// var heading4 =document.querySelector(".heading4");
+// var heading5 =document.querySelector(".heading5");
+// var heading6 =document.querySelector(".heading6");
+// var heading7 =document.querySelector(".heading7");
+// var heading8 =document.querySelector(".heading8");
+
+// setTimeout(function(){
+//   heading1.style.color="red"
+// } ,1000)
+
+// setTimeout(function(){
+//     heading2.style.color="blue"
+//   } ,2000)
+
+
+// setTimeout(function(){
+//     heading3.style.color="orange"
+//   } ,3000)
+
+
+
+
+
+// setTimeout(function(){
+//     heading1.style.color="red"
+//     setTimeout(function(){
+//         heading2.style.color="blue"
+//         setTimeout(function(){
+//             heading3.style.color="orange"
+//             setTimeout(function(){
+//                 heading4.style.color="blue"
+//                 setTimeout(function(){
+//                     heading5.style.color="blue"
+//                     setTimeout(function(){
+//                         heading6.style.color="blue"
+//                         setTimeout(function(){
+//                             heading7.style.color="blue"
+//                             setTimeout(function(){
+//                                 heading8.style.color="blue"
+//                             } ,1000)
+//                         } ,1000)
+//                     } ,1000)
+//                 } ,1000)
+//             } ,1000)
+//         } ,1000)
+//     } ,1000)
+// },  1000)
+
+var heading1 =document.querySelector(".heading1");
+var heading2 =document.querySelector(".heading2");
+var heading3 =document.querySelector(".heading3");
+var heading4 =document.querySelector(".heading4");
+var heading5 =document.querySelector(".heading5");
+var heading6 =document.querySelector(".heading6");
+var heading7 =document.querySelector(".heading7");
+var heading8 =document.querySelector(".heading8");
+
+function payramid(element, color , time  , text , callback , onerror){
+      if(element){
+         setInterval( function(){
+            element.style.color = color;
+            element.textContent = text;
+            if(callback){
+                callback();
+            }
+           
+         }, time)
+      }else{
+          onerror()
+      }
+}
+
+payramid(heading1, "red" , 1000 , "Hello world" ,()=>{
+    payramid(heading2, "green" , 1000 , "Hello world" ,()=>{
+        payramid(heading3, "blue" , 1000 , "Hello world" ,()=>{
+            payramid(heading4, "yellow" , 1000 , "Hello world" ,()=>{
+                payramid(heading5, "pink" , 1000 , "Hello world" ,()=>{
+                    payramid(heading6, "purple" , 1000 , "Hello world" ,()=>{
+                        payramid(heading7, "orange" , 1000 , "Hello world" ,()=>{
+                            payramid(heading8, "brown" , 1000 , "Hello world" ,()=>{}, ()=>{})
+                        } , ()=>{})
+                    } , ()=>{})
+                } , ()=>{})
+            } , ()=>{})
+        } , ()=>{})
+    } , ()=>{})
+},()=>{} )
+
+
+
+
+
+    </script>
+</body>
+</html>
