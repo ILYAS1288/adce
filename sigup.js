@@ -39,7 +39,7 @@ function sequence(element , time , color , text){
 
 
 
-sequence(headingone , 1000 , "red"  , "Pakistan" )
+       sequence(headingone , 1000 , "red"  , "Pakistan" )
 .then(()=>sequence(headingTwo , 1000 , "blue" , "Sindh" ))
 .then(()=>sequence(headingThree , 1000 , "green" , "Punjab" ))
 .then(()=>sequence(headingFour , 1000 , "Yellow" , "Gilgit" ))
