@@ -10,7 +10,7 @@ var chickenkarahiIngredients = ["salt", "masala", "oil", "totamo", "chicken"];
 // create 
 const chickenkarahiPromise = new Promise(function(resolve, reject){
     if(chickenkarahiIngredients.includes("oninon")){
-        resolve(["biryani is reDY"]);
+        resolve(["chickenkarahi is reDY"]);
     } else {
         reject("sorry some ingredients are not available");
     }
