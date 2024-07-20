@@ -11,6 +11,10 @@ var headingEight = document.querySelector(".heading8");
 
 
 
+
+
+var para = document.querySelector(".para");
+
 //step 2
 
 function sequence(element , time , color , text){
@@ -28,28 +32,30 @@ function sequence(element , time , color , text){
      })
 }
 
-//  sequence(headingone , 1000 , "red"  , "Jordan" )
-// .then(()=>sequence(headingTwo ,  1000 , "blue" , "Qatar" ))
-// .then(()=>sequence(headingThree , 1000 , "green" , "Morocco" ))
-// .then(()=>sequence(headingFour ,  1000 , "Yellow" , "Kuwait" ))
-// .then(()=>sequence(headingFive ,  1000 , "blue" , "UAE" ))
-// .then(()=>sequence(headingSix ,   1000 , "pink" , "Iran" ))
-// .then(()=>sequence(headingSeven , 1000 , "orange" , "UK" ))
-// .then(()=>sequence(headingEight , 1000 , "blue" , "Pakistan" ))
+function sequence(element, time, color, text) {
+   return new Promise((resolve, reject) => {
+      if (element) {
+         setTimeout(() => {
+            element.style.color = color;
+            element.textContent = text;
+            resolve(); // Resolve the promise after setting styles and text
+         }, time);
+      } else {
+         reject("Can't find element");
+      }
+   });
+}
 
 
-
-       sequence(headingone , 1000 , "red"  , "Pakistan" )
-.then(()=>sequence(headingTwo , 1000 , "blue" , "Sindh" ))
-.then(()=>sequence(headingThree , 1000 , "green" , "Punjab" ))
-.then(()=>sequence(headingFour , 1000 , "Yellow" , "Gilgit" ))
-.then(()=>sequence(headingFive , 1000 , "blue" , "Karachi" ))
-.then(()=>sequence(headingSix , 1000 , "pink" , "Kpk" ))
-.then(()=>sequence(headingSeven , 1000 , "orange" , "Kashmir" ))
-.then(()=>sequence(headingEight , 1000 , "blue" , "Astore" ))
-
-
-
+ sequence(headingone , 1000 , "red"  , "Jordan" )
+.then(()=>sequence(headingTwo ,  1000 , "blue" , "Qatar" ))
+.then(()=>sequence(headingThree , 1000 , "green" , "Morocco" ))
+.then(()=>sequence(headingFour ,  1000 , "Yellow" , "Kuwait" ))
+.then(()=>sequence(headingFive ,  1000 , "blue" , "UAE" ))
+.then(()=>sequence(headingSix ,   1000 , "pink" , "Iran" ))
+.then(()=>sequence(headingSeven , 1000 , "orange" , "UK" ))
+.then(()=>sequence(headingEight , 1000 , "blue" , "Pakistan" ))
+sequence( para , 20000 , "blue" , "JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for creating interactive and dynamic websites. Originally developed by Netscape as a client-side scripting language, JavaScript is now supported by all modern web browsers and is also used server-side through platforms like Node.js.")
 
 .catch((error)=>{
     console.log(error);
