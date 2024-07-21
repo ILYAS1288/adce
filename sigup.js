@@ -9,13 +9,15 @@ var headingSix= document.querySelector(".heading6");
 var headingSeven = document.querySelector(".heading7");
 var headingEight = document.querySelector(".heading8");
 
+var imge = document.querySelector(".imge");
 
-
-
+var butt = document.querySelector(".butt");
 
 var para = document.querySelector(".para");
 
 //step 2
+
+//heading
 
 function sequence(element , time , color , text){
      return new Promise((resolve , reject)=>{
@@ -31,6 +33,60 @@ function sequence(element , time , color , text){
         }
      })
 }
+
+
+//para
+function sequence(element , time , color , text){
+     return new Promise((resolve , reject)=>{
+        if(element){
+            setTimeout(()=>{
+                resolve()
+                element.style.color = color;
+                element.textContent = text;
+                
+             } , time)
+        }else{
+           reject("Couldn't find element")
+        }
+     })
+}
+
+
+//button
+function sequence(element , time , color , border  ,){
+   return new Promise((resolve , reject)=>{
+      if(element){
+          setTimeout(()=>{
+              resolve()
+              element.style.color = color;
+              element.textContent = text;
+              
+           } , time)
+      }else{
+         reject("Couldn't find element")
+      }
+   })
+}
+
+//image
+
+
+function sequence(element , time , color , ){
+   return new Promise((resolve , reject)=>{
+      if(element){
+          setTimeout(()=>{
+              resolve()
+              element.style.color = color;
+              element.textContent = text;
+              
+           } , time)
+      }else{
+         reject("Couldn't find element")
+      }
+   })
+}
+
+
 
 function sequence(element, time, color, text) {
    return new Promise((resolve, reject) => {
@@ -56,6 +112,9 @@ function sequence(element, time, color, text) {
 .then(()=>sequence(headingSeven , 1000 , "orange" , "UK" ))
 .then(()=>sequence(headingEight , 1000 , "blue" , "Pakistan" ))
 sequence( para , 20000 , "blue" , "JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for creating interactive and dynamic websites. Originally developed by Netscape as a client-side scripting language, JavaScript is now supported by all modern web browsers and is also used server-side through platforms like Node.js.")
+sequence( butt , 30000 , "blue" , "see more" , "6px soild black" )
+
+sequence(imge , 1000 , "red" , "clicke new flie" )
 
 .catch((error)=>{
     console.log(error);
