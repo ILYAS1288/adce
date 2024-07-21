@@ -15,24 +15,13 @@ var butt = document.querySelector(".butt");
 
 var para = document.querySelector(".para");
 
+var email = document.querySelector(".email");
+
 //step 2
 
-//heading
 
-function sequence(element , time , color , text){
-     return new Promise((resolve , reject)=>{
-        if(element){
-            setTimeout(()=>{
-                resolve()
-                element.style.color = color;
-                element.textContent = text;
-                
-             } , time)
-        }else{
-           reject("Couldn't find element")
-        }
-     })
-}
+
+
 
 
 //para
@@ -68,7 +57,7 @@ function sequence(element , time , color , border  ,){
    })
 }
 
-//image
+//name
 
 
 function sequence(element , time , color , ){
@@ -86,8 +75,22 @@ function sequence(element , time , color , ){
    })
 }
 
-
-
+//email
+function sequence(element , time , color , text){
+   return new Promise((resolve , reject)=>{
+      if(element){
+          setTimeout(()=>{
+              resolve()
+              element.style.color = color;
+              element.textContent = text;
+              
+           } , time)
+      }else{
+         reject("Couldn't find element")
+      }
+   })
+}
+// heading
 function sequence(element, time, color, text) {
    return new Promise((resolve, reject) => {
       if (element) {
@@ -114,7 +117,8 @@ function sequence(element, time, color, text) {
 sequence( para , 20000 , "blue" , "JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for creating interactive and dynamic websites. Originally developed by Netscape as a client-side scripting language, JavaScript is now supported by all modern web browsers and is also used server-side through platforms like Node.js.")
 sequence( butt , 30000 , "blue" , "see more" , "6px soild black" )
 
-sequence(imge , 1000 , "red" , "clicke new flie" )
+sequence(imge , 40000 , "red" , "Full Name:" )
+sequence(email , 50000 , "blue" , "Enter Your Full Email:")
 
 .catch((error)=>{
     console.log(error);
