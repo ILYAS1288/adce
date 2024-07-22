@@ -11,42 +11,44 @@ const myrequest =  fetch(url);
 
 //consume
 
-const hard = " https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8"
-const Programming =fetch(url)
+const url1 = 'https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8';
 
-Programming.then((para)=>{
-    return para.json();
-}).then((para)=>{
-    return para.json();
-})
-console.log(Programming );
+fetch(url)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json(); // Parse JSON asynchronously
+  })
+  .then((data) => {
+    console.log(data); // Log the parsed JSON data
+    // Further processing of data
+  })
+  .catch((error) => {
+    console.error('Error fetching data:', error);
+  });
+console.log(url1 );
 
 
 
+const url2 = 'https://jsonplaceholder.typicode.com/todos/1';
 
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json(); // Parse JSON asynchronously
+  })
+  .then(data => {
+    console.log(data); // Log the parsed JSON data
+    // Further processing of data
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
 
-  const  api =    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    
-const w = fetch(url);
-
-
-
-w.then((end)=>{
-    // if(res.ok){
-        return end.json()
-
-    //  }else{
-//         throw new Error(`HTTP error! status: ${res.status}`);
-        
-//     }
-})
-.then((w)=>{
-//    if(data.ok)das
-})
-.catch((err)=>{
-    console.log("error to fetch data");
-})
-console.log(w );
+  console.log(url2);
 
 
 
