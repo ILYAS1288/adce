@@ -39,7 +39,7 @@ fetch(url)
           <p>Price ${product.price} PKR</p>
         </div>
       `;
-      container.appendChild(createDiv); // Append 
+      container.appendChild(createDiv); 
     });
   })
   .catch((err) => {
