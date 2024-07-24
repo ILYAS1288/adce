@@ -88,4 +88,40 @@ fetch(url)
   
 
 
-  
+    const container2 = document.querySelector(".container2");
+
+const url2 = "https://fakestoreapi.com/products";
+
+fetch(url2)
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error(`Error: ${res.status} ${res.statusText}`);
+    }
+  })
+  .then((products) => {
+    // Filter products based on jewelry category
+    const jewelryCategory = products.filter((product) => product.category === "jewelery");
+
+    console.log("Filtered jewelryCategory Products:", jewelryCategory);
+
+    jewelryCategory.forEach((product) => {
+      // Create DOM elements for each product
+      const createDiv = document.createElement('div');
+      createDiv.classList.add("card2");
+      createDiv.innerHTML = `
+        <div class="img2">
+          <img src="${product.image}" alt="${product.title}">
+        </div>
+        <div class="content2">
+          <h4>${product.title}</h4>
+          <p>Price: $${product.price}</p>
+        </div>
+      `;
+      container2.appendChild(createDiv);
+    });
+  })
+  .catch((error) => {
+    console.error('Error fetching and displaying jewelry products:', error);
+  });
