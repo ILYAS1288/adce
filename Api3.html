@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Product Cards</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <style>
+    /* Add any custom styles here */
+  </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+          <!-- This is where dynamically created columns will be appended -->
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img src="product-image-url.jpg" class="card-img-top" alt="Product Title">
+              <div class="card-body">
+                <h5 class="card-title">Product Title</h5>
+                <p class="card-text">Product Description</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">Price: $99.99</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Each product generates its own card structure like the one above -->
+        </div>
+      </div>
+      
+
+  <!-- Bootstrap JS and dependencies (optional if needed) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Your custom JavaScript code -->
+  <script>
+    // JavaScript code goes here
+    const row = document.querySelector(".row");
+
+    // Fetch the data from the API
+    const url = "https://api.escuelajs.co/api/v1/products";
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        // Filter products that belong to the "Electronics" category
+        const filteredProducts = data.filter((element) => {
+          return element.category.name === "Electronics";
+        });
+
+        filteredProducts.forEach((product) => {
+          // Parse the JSON string inside product.category.image if needed
+          // const imgArray = JSON.parse(product.category.image);
+          // const img = imgArray[0]; // Assuming the first image URL is needed
+
+          // Create a column for each product
+          const col = document.createElement("div");
+          col.classList.add("col-md-4");
+          col.innerHTML = `
+            <div class="card mb-4 shadow-sm">
+              <img src="${product.category.image}" class="card-img-top" alt="${product.title}">
+              <div class="card-body">
+                <h5 class="card-title">${product.title}</h5>
+                <p class="card-text">${product.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">Price: $${product.price}</small>
+                </div>
+              </div>
+            </div>
+          `;
+          // Append the column to the row
+          row.appendChild(col);
+        });
+
+      })
+      .catch((error) => console.error("Error fetching the data:", error));
+  </script>
+</body>
+</html>
