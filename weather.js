@@ -1,6 +1,14 @@
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = '942723219f2931016e72699f22a46cc0';
-    const city = 'London,uk';
+    const city = 'khaplu';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     // Fetch data from API
