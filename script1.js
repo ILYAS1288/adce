@@ -34,8 +34,12 @@ function fetchWeatherData(city) {
         .catch(error => {
             alert(error.message);
             clearWeatherInfo();
-            cityInput.value = "";
+           
         });
+    
+    
+            city.Input.value  =  "";
+    
 }
 
 function updateWeatherInfo(data) {
@@ -52,5 +56,6 @@ function clearWeatherInfo() {
     city.textContent = '';
     humidity.textContent = '';
     windSpeed.textContent = '';
+    
 }
 
