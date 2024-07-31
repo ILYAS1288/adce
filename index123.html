@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         let arrray = [ 2 ,3, 4];
+//         console.log(arrray);
+
+
+
+// use ={
+//     age : 21
+// }
+// use1 = Object.create(use)
+// console.log(use1);
+
+
+user3 = {
+    age:20,
+    name :" ilyas",
+about: function(){
+    console.log(`my is ${this.name}`);
+}
+}
+user4 =  Object.create(user3)
+user4.age =45
+user4.fname = "Ali"
+console.log(user4);
+
+
+    </script>
+
+</body>
+</html>
