@@ -32,6 +32,52 @@ user4.fname = "Ali"
 console.log(user4);
 
 
+ function registerUser(fname , age, gender, city){
+ const user = {}
+    user.fname = fname
+    user.age = age
+    user.gender = gender
+    user.city = city
+
+  return user
+ }
+
+ {}
+{
+  fnmae: "john"
+ }
+
+
+const user6 =registerUser("john" , "" ,  "male" , "london");
+ const user2 = registerUser("ram" , 21 , "male" , "dehli");
+ console.log(user6);
+ console.log(user2);
+
+
+
+
+ function registerUser(fname , age, gender, city){
+ const user = Object.create(registerUser.prototype) //{}+ proto set 
+    user.fname = fname
+   user.age = age
+    user.gender = gender
+    user.city = city
+
+  return user
+ }
+
+ registerUser.prototype.about = function(){
+     console.log(`hello i from ${this.city}`);
+ }
+
+registerUser.prototype.randomValue = "random value"
+
+
+
+const user1 =registerUser("john" , 21,  "male" , "london");
+user1.about();
+console.log(user1.randomValue);
+
     </script>
 
 </body>
