@@ -40,6 +40,7 @@ console.log(user4);
     user.city = city
 
   return user
+  
  }
 
  {}
@@ -57,7 +58,8 @@ const user6 =registerUser("john" , "" ,  "male" , "london");
 
 
  function registerUser(fname , age, gender, city){
- const user = Object.create(registerUser.prototype) //{}+ proto set 
+ const user = Object.create(registerUser.prototype) 
+
     user.fname = fname
    user.age = age
     user.gender = gender
