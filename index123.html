@@ -40,6 +40,7 @@ console.log(user4);
     user.city = city
 
   return user
+
   
  }
 
@@ -79,6 +80,52 @@ registerUser.prototype.randomValue = "random value"
 const user1 =registerUser("john" , 21,  "male" , "london");
 user1.about();
 console.log(user1.randomValue);
+
+
+
+
+// banking system
+// class
+class BankingSystem {
+constructor(bankBranch , manager ){
+  this.bankBranch = bankBranch;
+  this.manager = manager;
+}
+
+}
+
+
+//inheritance 
+
+class Employees extends BankingSystem{
+    constructor( employeeName , salaray ){
+        super()
+        this.employeeName = employeeName;
+        this.salaray=salaray;
+      
+
+    }
+}
+
+
+const employee1 = new Employees("Shahrukh" ,  100000)
+console.log(employee1);
+
+
+
+
+
+
+
+const bankBranch1 = new BankingSystem("Danyore" , "Saad");
+
+console.log(bankBranch1);
+
+
+
+
+
+
 
     </script>
 
